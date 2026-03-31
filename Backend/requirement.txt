@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+pydantic
+nltk
+joblib
+sqlalchemy
+jinja2
+scikit-learn

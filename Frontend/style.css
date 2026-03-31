@@ -1,0 +1,236 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ebf1ff 0%, #f3f6fa 100%);
+    margin: 0;
+    padding: 24px;
+    color: #2d3748;
+}
+
+.title {
+    margin: 0px;
+    background-color: white;
+    text-align: center;
+}
+
+nav {
+    background: #ffffffcc;
+    backdrop-filter: blur(8px);
+    width: 100%;
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(26, 32, 44, 0.12);
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 10px 18px rgba(6, 11, 20, 0.06);
+}
+
+nav button {
+    background: #ffffff;
+    border: 1px solid #cbd5e0;
+    padding: 9px 18px;
+    margin: 0;
+    font-weight: 600;
+    color: #2f4f74;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.25s ease;
+}
+
+nav button:hover {
+    color: #ffffff;
+    background-color: #1d6ce0;
+    border-color: #1d6ce0;
+    box-shadow: 0 6px 14px rgba(29, 108, 224, 0.34);
+}
+
+nav button.active {
+    background-color: #1877f2;
+    border-color: #1877f2;
+    color: #ffffff;
+    box-shadow: 0 6px 14px rgba(24, 119, 242, 0.4);
+}
+
+#main-container {
+    width: min(100%, 920px);
+    margin: 16px auto 0;
+}
+
+section {
+    background: #ffffff;
+    padding: 28px;
+    border-radius: 16px;
+    box-shadow: 0 12px 26px rgba(23, 45, 74, 0.07);
+    margin-bottom: 18px;
+    border: 1px solid #e2e8f0;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: #243a59;
+    font-size: 1.6rem;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 14px;
+    margin: 8px 0 14px;
+    border: 1px solid #cbd5e0;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 15px;
+    background: #fbfdff;
+    color: #1f2d3d;
+    outline: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #4e8bf8;
+    box-shadow: 0 0 0 3px rgba(78, 139, 248, 0.2);
+}
+
+#post-button {
+    width: 100%;
+    padding: 14px;
+    background-color: #2f80ed;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 12px 20px rgba(47, 128, 237, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#post-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 24px rgba(47, 128, 237, 0.45);
+}
+
+.toxic-blur {
+    filter: blur(6px);
+    transition: filter 0.3s ease-in-out;
+    background: #fff1f1;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.toxic-blur:hover {
+    filter: blur(2px);
+}
+
+.post-card {
+    border: 1px solid #e2e8f0;
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    background: #ffffff;
+}
+
+.post-card>div:first-child {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.post-card span:first-child {
+    font-weight: 700;
+    color: #1e4b8b;
+}
+
+.prediction-container {
+    margin-top: 10px;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.35;
+    border: 1px solid #c7d2e9;
+    background: #f8fbff;
+}
+
+.prob-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 4px;
+}
+
+.prob-item span:first-child {
+    width: 100px;
+    font-weight: 600;
+    color: #1a202c;
+}
+
+.probability-bar {
+    flex-grow: 1;
+    height: 10px;
+    background: #e2e8f0;
+    border-radius: 5px;
+    overflow: hidden;
+    min-width: 80px;
+}
+
+.prob-item span:last-child {
+    width: 50px;
+    text-align: right;
+    font-weight: 600;
+}
+
+.probability-fill {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.3s ease;
+}
+
+.toxic-fill {
+    background: #ff756d;
+}
+
+.severe-toxic-fill {
+    background: #d23f44;
+}
+
+.obscene-fill {
+    background: #f6b769;
+}
+
+.threat-fill {
+    background: #f4b239;
+}
+
+.insult-fill {
+    background: #4fb56a;
+}
+
+.identity-hate-fill {
+    background: #4295f0;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 14px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    section {
+        padding: 18px;
+    }
+
+    #post-button {
+        padding: 12px;
+    }
+}
