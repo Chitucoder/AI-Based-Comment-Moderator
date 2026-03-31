@@ -12,7 +12,7 @@ inputArea.oninput = function () {
             return;
         }
 
-        const response = await fetch('http://127.0.0.1:8000/predict', {
+        const response = await fetch('https://comment-moderation-api-yx0y.onrender.com/predict', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ text: text })
@@ -74,7 +74,7 @@ async function handlePost() {
         return;
     }
 
-    const predictResponse = await fetch('http://127.0.0.1:8000/predict', {
+    const predictResponse = await fetch('https://comment-moderation-api-yx0y.onrender.com/predict', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text: text })
@@ -104,7 +104,7 @@ async function handlePost() {
 }
 
 async function submitPost(user, text) {
-    const url = `http://127.0.0.1:8000/submit?username=${encodeURIComponent(user)}&content=${encodeURIComponent(text)}`;
+    const url = `https://comment-moderation-api-yx0y.onrender.com/submit?username=${encodeURIComponent(user)}&content=${encodeURIComponent(text)}`;
     const response = await fetch(url, { method: 'POST' });
 
     if (response.ok) {
@@ -129,7 +129,7 @@ document.getElementById('confirm-no').onclick = () => {
 };
 
 async function loadFeed(containerId, filterUser = null) {
-    const response = await fetch('http://127.0.0.1:8000/comments');
+    const response = await fetch('https://comment-moderation-api-yx0y.onrender.com/comments');
     let comments = await response.json();
 
     if (filterUser) {
