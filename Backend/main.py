@@ -37,7 +37,7 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:3000",
         "http://localhost:5173",
-        "https://moderation-system-deploy-ex7i2yvbe-chitucoders-projects.vercel.app/"
+        "https://moderation-system-deploy-ex7i2yvbe-chitucoders-projects.vercel.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
