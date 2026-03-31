@@ -15,10 +15,6 @@ from datetime import datetime
 from fastapi.templating import Jinja2Templates
 from jinja2 import Environment, FileSystemLoader
 import uvicorn
-origins=[
-    "http://127.0.0.1:5500",
-    "http://localhost:5500"
-]
 
 env = Environment(loader=FileSystemLoader("templates"))
 
@@ -35,12 +31,17 @@ async def lifespan(app: FastAPI):
     
     
 app = FastAPI(lifespan=lifespan)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,        
-    allow_credentials=True,       
-    allow_methods=["*"],          
-    allow_headers=["*"],           
+    allow_origins=[
+        "http://localhost:3000",
+        "http://localhost:5173",
+        "https://your-frontend.vercel.app"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 class TextInput(BaseModel):
