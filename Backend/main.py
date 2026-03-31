@@ -14,7 +14,7 @@ from sqlalchemy.orm import Session
 from datetime import datetime
 from fastapi.templating import Jinja2Templates
 from jinja2 import Environment, FileSystemLoader
-
+import uvicorn
 origins=[
     "http://127.0.0.1:5500",
     "http://localhost:5500"
@@ -157,3 +157,6 @@ async def admin_dashboard(request: Request,db: Session = Depends(get_db)):
         stats={"total": total, "flagged": flagged}
     )
     return HTMLResponse(content = html)
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0",port = 8000)
