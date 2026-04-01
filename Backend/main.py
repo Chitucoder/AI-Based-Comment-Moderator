@@ -34,7 +34,6 @@ app = FastAPI(lifespan=lifespan)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://127.0.0.1:5500",
         "https://moderation-system-deploy-ex7i2yvbe-chitucoders-projects.vercel.app",
         "https://moderation-system-deploy.vercel.app"
     ],
@@ -42,6 +41,11 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.get("/health")
+def health_check():
+    return {"status": "ok"}
+
 
 class TextInput(BaseModel):
     text: str
