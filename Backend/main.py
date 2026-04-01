@@ -34,7 +34,7 @@ app = FastAPI(lifespan=lifespan)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:5500",
+        "http://127.0.0.1:5500",
         "https://moderation-system-deploy-ex7i2yvbe-chitucoders-projects.vercel.app",
         "https://moderation-system-deploy.vercel.app"
     ],

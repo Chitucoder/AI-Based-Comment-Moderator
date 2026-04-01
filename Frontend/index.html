@@ -14,46 +14,42 @@
         <button id="feed-btn" onclick="showTab('feed')">FEED</button>
         <button id="history-btn" onclick="showTab('history')">HISTORY</button>
     </nav>
-    <div id="loader">
-        <p>Waking up server... ⏳</p>
+
+
+
+    <div id="main-container">
+        <section id="tab-create">
+            <h2>Create a Post</h2>
+            <input type="text" id="username-input" placeholder="Your Name">
+            <textarea id="text-input" placeholder="What's on your mind?"></textarea>
+            <div id="prediction-container" class="prediction-container" style="display:none;"></div>
+            <button id="post-button" onclick="handlePost()">Post Now</button>
+        </section>
+
+        <section id="tab-feed" style="display:none;">
+            <h2>Community Feed</h2>
+            <div id="feed-list"></div>
+        </section>
+
+        <section id="tab-history" style="display:none;">
+            <h2>My Activity</h2>
+            <div id="history-list"></div>
+        </section>
     </div>
 
-    <div id="app" style="display:none;">
-        <!-- your existing UI -->
-
-        <div id="main-container">
-            <section id="tab-create">
-                <h2>Create a Post</h2>
-                <input type="text" id="username-input" placeholder="Your Name">
-                <textarea id="text-input" placeholder="What's on your mind?"></textarea>
-                <div id="prediction-container" class="prediction-container" style="display:none;"></div>
-                <button id="post-button" onclick="handlePost()">Post Now</button>
-            </section>
-
-            <section id="tab-feed" style="display:none;">
-                <h2>Community Feed</h2>
-                <div id="feed-list"></div>
-            </section>
-
-            <section id="tab-history" style="display:none;">
-                <h2>My Activity</h2>
-                <div id="history-list"></div>
-            </section>
-        </div>
-
-        <div id="confirmation-modal"
-            style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000; justify-content:center; align-items:center;">
-            <div
-                style="background: linear-gradient(135deg, #ffffff 0%, #f7fafc 100%); padding:20px; border-radius:12px; max-width:400px; margin:20px; text-align:center; border: 1px solid #e2e8f0;">
-                <p id="modal-message"></p>
-                <button id="confirm-yes"
-                    style="padding:10px 20px; margin:10px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color:white; border:none; border-radius:8px; cursor:pointer; font-weight: bold;">Yes,
-                    Post</button>
-                <button id="confirm-no"
-                    style="padding:10px 20px; margin:10px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color:white; border:none; border-radius:8px; cursor:pointer; font-weight: bold;">Cancel</button>
-            </div>
+    <div id="confirmation-modal"
+        style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000; justify-content:center; align-items:center;">
+        <div
+            style="background: linear-gradient(135deg, #ffffff 0%, #f7fafc 100%); padding:20px; border-radius:12px; max-width:400px; margin:20px; text-align:center; border: 1px solid #e2e8f0;">
+            <p id="modal-message"></p>
+            <button id="confirm-yes"
+                style="padding:10px 20px; margin:10px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color:white; border:none; border-radius:8px; cursor:pointer; font-weight: bold;">Yes,
+                Post</button>
+            <button id="confirm-no"
+                style="padding:10px 20px; margin:10px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color:white; border:none; border-radius:8px; cursor:pointer; font-weight: bold;">Cancel</button>
         </div>
     </div>
+
     <script src="app.js"></script>
 </body>
 

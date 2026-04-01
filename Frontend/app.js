@@ -1,26 +1,3 @@
-async function wakeServer() {
-    try {
-        await fetch("https://comment-moderation-api-yx0y.onrender.com/predict", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                comment: "test"
-            })
-        });
-
-        document.getElementById("loader").style.display = "none";
-        document.getElementById("app").style.display = "block";
-
-    } catch (err) {
-        console.log("Retrying...");
-        setTimeout(wakeServer, 3000);
-    }
-}
-
-wakeServer();
-
 
 const inputArea = document.getElementById('text-input');
 const predictionContainer = document.getElementById('prediction-container');
