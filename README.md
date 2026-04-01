@@ -42,13 +42,19 @@ An end-to-end AI-powered system that analyzes user comments and determines wheth
 
 ## 📸 Screenshots
 
-*Add your screenshots here*
+<img width="556" height="287" alt="Create Post" src="https://github.com/user-attachments/assets/368e1698-2c42-41e9-9e40-e61ba3dd4648" />
+<img width="479" height="400" alt="Analysis" src="https://github.com/user-attachments/assets/88833b00-8117-4d60-9bd9-ddbbd593c9bc" />
+<img width="374" height="392" alt="Feed" src="https://github.com/user-attachments/assets/08e1732c-a044-4648-a62e-50d389edb4e2" />
+<img width="424" height="389" alt="Confirmation" src="https://github.com/user-attachments/assets/6fd78190-ba8e-4c17-ae7c-c083cb216822" />
+<img width="533" height="310" alt="History" src="https://github.com/user-attachments/assets/7a9c8298-830a-495a-a2e5-1c2ed43631d7" />
+<img width="680" height="317" alt="Dashboard" src="https://github.com/user-attachments/assets/bd52f988-4eda-4225-a08f-54b9767f073f" />
+
 
 ---
 
 ## 🔗 Live Demo
 
-[https://yourapp.vercel.app](https://yourapp.vercel.app)
+[https://yourapp.vercel.app](https://moderation-system-deploy.vercel.app/)
 
 ---
 
