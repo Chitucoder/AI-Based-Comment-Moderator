@@ -20,7 +20,6 @@ env = Environment(loader=FileSystemLoader("templates"))
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    print("Hello World")
     nltk.download('stopwords', quiet=True)
     app.state.stop_words = set(stopwords.words('english'))
     app.state.tfidf_vectorizer = joblib.load('models/tfidf_vectorizer.pkl')

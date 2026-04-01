@@ -1,9 +1,11 @@
 from sqlalchemy import create_engine, Integer, String, Column, DateTime, Boolean, Float
 from sqlalchemy.orm import declarative_base, sessionmaker
 from sqlalchemy.sql import func
+import os
 
-SQL_ALCHEMY_DATABASE_URL = "sqlite:///./moderation.db"
-engine = create_engine(SQL_ALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False})
+DATABASE_URL = os.getenv("DATABASE_URL")
+
+engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
